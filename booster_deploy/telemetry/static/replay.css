@@ -1,0 +1,33 @@
+:root{color-scheme:dark;--page:#05070a;--panel:#111721;--line:#273244;--text:#e6edf3;--muted:#8b9bb0;
+  --accent:#38bdf8;--warn:#e9a568;font-family:ui-sans-serif,system-ui,"Noto Sans CJK SC",sans-serif}
+*{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--page);color:var(--text)}
+body{display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;background:var(--panel);
+  border-bottom:1px solid var(--line);z-index:10}
+h1{font-size:14px;margin:0 10px 0 0;white-space:nowrap}
+button,select{font:inherit;color:var(--text);background:#161e2b;border:1px solid var(--line);
+  border-radius:6px;padding:5px 9px;cursor:pointer}
+button:hover{border-color:var(--accent)}button.on{border-color:var(--accent);color:#bfe9ff}
+#timeline{flex:1;min-width:180px;accent-color:var(--accent)}
+#time-label{font:12px ui-monospace,Menlo,monospace;color:var(--muted);min-width:96px}
+#state-label{font:12px ui-monospace,Menlo,monospace;color:var(--accent);min-width:96px;text-align:right}
+#replay-root{position:relative;min-height:0;background:#05070a;overflow:hidden}
+#replay-canvas{display:block;width:100%;height:100%;outline:none}
+#status{position:absolute;left:50%;top:10px;transform:translateX(-50%);z-index:5;padding:6px 12px;
+  border-radius:6px;background:rgba(17,23,33,.94);border:1px solid var(--line);color:var(--muted);
+  font:12px ui-monospace,monospace;max-width:80%}
+#status.error{color:#fecaca;border-color:#7f1d1d;background:rgba(45,10,10,.96)}
+#keys{position:absolute;left:10px;bottom:8px;z-index:4;font:11px ui-monospace,monospace;color:#cfe3f6;
+  background:rgba(8,11,16,.72);border:1px solid rgba(56,189,248,.18);border-radius:5px;padding:4px 8px}
+.pane-label{position:absolute;z-index:3;padding:4px 7px;pointer-events:none;border-radius:5px;
+  font:11px ui-monospace,monospace;color:#dbeafe;background:rgba(8,11,16,.8);
+  border:1px solid rgba(56,189,248,.22);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pane-label small{color:var(--warn);margin-left:6px}
+.pane-label.hidden-stream{color:#fbd38d}
+@media(max-width:720px){
+  header{gap:6px;padding:6px 8px}
+  h1{width:100%;margin:0}
+  #timeline{order:2;min-width:120px}
+  #time-label{order:2}
+  #state-label{margin-left:auto;min-width:72px}
+}

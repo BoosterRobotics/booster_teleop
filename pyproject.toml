@@ -1,0 +1,46 @@
+[project]
+name = "booster-teleoperation"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torch==2.8.0",
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "mujoco==3.10.0",
+    "onnxruntime==1.22.1",
+    "onnx==1.18.0",
+    "evdev==1.9.3",
+    "pyzmq==27.1.0",
+    "msgpack==1.2.1",
+    "matplotlib==3.11.2",
+    "mink==1.2.0",
+    "qpsolvers==4.13.0",
+    "daqp==0.8.7",
+    "pyyaml==6.0.3",
+    "rich==14.3.4",
+    "viser==1.0.30",
+    "trimesh==4.12.2",
+]
+
+[project.optional-dependencies]
+onboard = [
+    "booster-robotics-sdk-python==1.5.6",
+    "xrobotoolkit-sdk==1.0.2; platform_machine == 'aarch64'",
+]
+
+[tool.uv]
+package = false
+prerelease = "disallow"
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "sys_platform == 'linux' and platform_machine == 'aarch64'",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+xrobotoolkit-sdk = { path = "third_party/xrobotoolkit_sdk_aarch64/python" }

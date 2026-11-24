@@ -1,0 +1,18 @@
+enabled: false
+trajectory_switch: once  # once | unlimited
+recording:
+  mode: tracking # tracking | full_run
+writer:
+  capacity_bytes: 16777216
+  max_record_bytes: 2097152
+  flush_s: 0.25
+stages:
+  publish: {enabled: true, fields: {human_frame: true, poses: true, raw_joints: true}}
+  retarget: {enabled: true, fields: {human_frame: true, robot_qpos: true}}
+  postprocess: {enabled: true}
+  encoder: {enabled: true, fields: {feeds: true, raw_action: true, clipped_action: true, target: true}}
+  state: {enabled: true, fields: {low_state: true, q: true, dq: true}}
+  keys: {enabled: true}
+  events: {enabled: true}
+  dashboard: {enabled: true}
+  health: {enabled: true}

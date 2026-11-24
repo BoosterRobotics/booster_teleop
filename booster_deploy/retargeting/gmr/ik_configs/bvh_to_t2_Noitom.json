@@ -1,0 +1,137 @@
+{
+    "robot_root_name": "trunk",
+    "human_root_name": "Hips",
+    "ground_height": 0.0,
+    "robot_height": 1.4,
+    "use_auto_scale": true,
+    "human_height_cal_start": "Head",
+    "human_height_cal_end": "LeftFoot",    
+    "use_ik_optimization": true,
+    
+    "human_scale_table": {
+        "Hips": 0.9, "Spine1": 0.9,
+        "LeftUpLeg": 0.9, "RightUpLeg": 0.9,
+        "LeftLeg": 0.9, "RightLeg": 0.9,
+        "LeftFoot": 0.9, "RightFoot": 0.9,
+        "LeftArm": 0.9, "RightArm": 0.9,
+        "LeftForeArm": 0.9, "RightForeArm": 0.9,
+        "LeftHand": 0.9, "RightHand": 0.9
+    },
+    "collision_pairs": [
+    ],
+    "ik_joint_mappings": {
+        "waist_yaw_link": {
+            "human_body": "Hips",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 10, "orientation": 10},
+            "stage2_weights": {"position": 20, "orientation": 0},
+            "frame_type": "body"
+        },    
+        "trunk": {
+            "human_body": "Spine1",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [-0.500, 0.500, 0.500, 0.500],
+            "stage1_weights": {"position": 0, "orientation": 100},
+            "stage2_weights": {"position": 5, "orientation": 100},
+            "frame_type": "body"
+        },
+        "left_hip_yaw_link": {
+            "human_body": "LeftUpLeg",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        },
+        "right_hip_yaw_link": {
+            "human_body": "RightUpLeg",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        },    
+        "left_knee_pitch_link": {
+            "human_body": "LeftLeg",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        },
+        "right_knee_pitch_link": {
+            "human_body": "RightLeg",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        }, 
+        "left_ankle_roll_link": {
+            "human_body": "LeftFoot",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 100, "orientation": 10},
+            "stage2_weights": {"position": 100, "orientation": 10},
+            "frame_type": "body"
+        },
+        "right_ankle_roll_link": {
+            "human_body": "RightFoot",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 100, "orientation": 10},
+            "stage2_weights": {"position": 100, "orientation": 10},
+            "frame_type": "body"
+        },    
+        "left_elbow_pitch_link": {
+            "human_body": "LeftArm",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 20},
+            "stage2_weights": {"position": 0, "orientation": 20},
+            "frame_type": "body"
+        },
+        "right_elbow_pitch_link": {
+            "human_body": "RightArm",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 20},
+            "stage2_weights": {"position": 0, "orientation": 20},
+            "frame_type": "body"
+        },  
+        "left_elbow_yaw_link": {
+            "human_body": "LeftForeArm",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        },
+        "right_elbow_yaw_link": {
+            "human_body": "RightForeArm",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        },    
+
+        "left_wrist_roll_link": {
+            "human_body": "LeftHand",   
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        },
+        "right_wrist_roll_link": {
+            "human_body": "RightHand",
+            "pos_offset": [0.0, 0.0, 0.0],
+            "rot_offset": [0.500, -0.500, -0.500, -0.500],
+            "stage1_weights": {"position": 0, "orientation": 10},
+            "stage2_weights": {"position": 10, "orientation": 5},
+            "frame_type": "body"
+        }            
+    }
+}

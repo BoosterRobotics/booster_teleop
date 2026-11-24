@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>遥操日志回放</title>
+<script type="importmap">
+{"imports":{"three":"/webviz/vendor/three/build/three.module.js","three/addons/":"/webviz/vendor/three/addons/"}}
+</script>
+<link rel="stylesheet" href="/replay.css">
+</head>
+<body>
+<header>
+  <h1 id="title">遥操日志回放</h1>
+  <button id="play-toggle" title="播放 / 暂停（空格）">▶</button>
+  <input id="timeline" type="range" min="0" max="1000" value="0" step="1" aria-label="时间轴">
+  <span id="time-label">00:00:00.000</span>
+  <select id="speed" aria-label="倍速">
+    <option value="0.25">0.25×</option><option value="0.5">0.5×</option>
+    <option value="1" selected>1×</option><option value="2">2×</option>
+  </select>
+  <button id="camera-lock" class="on"></button>
+  <button id="camera-reset"></button>
+  <button id="language">EN</button>
+  <span id="state-label">—</span>
+</header>
+<main id="replay-root">
+  <div id="status">加载中…</div>
+  <div id="keys"></div>
+</main>
+<script type="module" src="/replay.js"></script>
+</body>
+</html>

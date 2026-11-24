@@ -1,0 +1,54 @@
+version: 1
+
+# Source names come from the Revo2 retarget model. The position-controller
+# topics consume a six-element Float64MultiArray in radians. The device driver
+# multiplies each ROS value by its scale before writing the SDK command, so the
+# old 0..1000 range is represented by 0..1.7453292519943296 rad.
+hands:
+  left:
+    topic: /hand_left/left_revo2_hand_position_controller/commands
+    source_joint_names:
+      - left_thumb_proximal_joint
+      - left_thumb_metacarpal_joint
+      - left_index_proximal_joint
+      - left_middle_proximal_joint
+      - left_ring_proximal_joint
+      - left_pinky_proximal_joint
+    target_joint_names:
+      - left_thumb_proximal_joint
+      - left_thumb_metacarpal_joint
+      - left_index_proximal_joint
+      - left_middle_proximal_joint
+      - left_ring_proximal_joint
+      - left_pinky_proximal_joint
+    source_position_limits:
+      - [0.0, 1.03]
+      - [0.0, 1.57]
+      - [0.0, 1.41]
+      - [0.0, 1.41]
+      - [0.0, 1.41]
+      - [0.0, 1.41]
+
+  right:
+    topic: /hand_right/right_revo2_hand_position_controller/commands
+    source_joint_names:
+      - right_thumb_proximal_joint
+      - right_thumb_metacarpal_joint
+      - right_index_proximal_joint
+      - right_middle_proximal_joint
+      - right_ring_proximal_joint
+      - right_pinky_proximal_joint
+    target_joint_names:
+      - right_thumb_proximal_joint
+      - right_thumb_metacarpal_joint
+      - right_index_proximal_joint
+      - right_middle_proximal_joint
+      - right_ring_proximal_joint
+      - right_pinky_proximal_joint
+    source_position_limits:
+      - [0.0, 1.03]
+      - [0.0, 1.57]
+      - [0.0, 1.41]
+      - [0.0, 1.41]
+      - [0.0, 1.41]
+      - [0.0, 1.41]

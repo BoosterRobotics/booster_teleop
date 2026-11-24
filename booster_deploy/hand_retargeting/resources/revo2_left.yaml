@@ -1,0 +1,6 @@
+extends: "./revo2_base.yaml"
+
+hand:
+  name: "revo2_left"
+  side: "left"
+  mjcf_path: "./mjcf/revo2_left/model.xml"
